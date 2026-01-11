@@ -88,27 +88,41 @@
             font-family: 'Newsreader', serif;
             font-size: 1.125rem;
             font-weight: 500;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.75rem;
             color: var(--text-muted);
         }
 
         .steps {
             list-style: none;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
 
         .steps li {
             display: flex;
-            align-items: baseline;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
             gap: 1rem;
-            margin-bottom: 0.75rem;
-            font-size: 1.05rem;
+        }
+
+        .step-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0.5rem;
         }
 
         .steps .num {
             font-family: 'Newsreader', serif;
             font-size: 0.9rem;
             color: var(--text-muted);
-            flex-shrink: 0;
+            margin-bottom: 0.25rem;
+        }
+
+        .step-text {
+            font-size: 0.95rem;
+            line-height: 1.4;
         }
 
         /* Waitlist */
@@ -147,6 +161,11 @@
             .hero h1 {
                 font-size: 1.5rem;
             }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
         }
 
         /* Subtle animation on load */
@@ -184,9 +203,34 @@
         <div class="how-it-works">
             <h2>How it works</h2>
             <ol class="steps">
-                <li><span class="num">1.</span> Have a session with your LLM</li>
-                <li><span class="num">2.</span> Share the transcript (redact anything you want)</li>
-                <li><span class="num">3.</span> Get professional notes back</li>
+                <li>
+                    <svg class="step-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16C12 11.5817 15.5817 8 20 8H28C32.4183 8 36 11.5817 36 16V24C36 28.4183 32.4183 32 28 32H26L20 38V32H20C15.5817 32 12 28.4183 12 24V16Z" stroke="#2D4A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="20" cy="20" r="1.5" fill="#2D4A3E"/>
+                        <circle cx="24" cy="20" r="1.5" fill="#2D4A3E"/>
+                        <circle cx="28" cy="20" r="1.5" fill="#2D4A3E"/>
+                    </svg>
+                    <div class="num">1.</div>
+                    <div class="step-text">Have a session with your LLM</div>
+                </li>
+                <li>
+                    <svg class="step-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 10H28L38 20V38C38 39.1046 37.1046 40 36 40H14C12.8954 40 12 39.1046 12 38V12C12 10.8954 12.8954 10 14 10Z" stroke="#2D4A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M28 10V20H38" stroke="#2D4A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18 26H30M18 32H26" stroke="#2D4A3E" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div class="num">2.</div>
+                    <div class="step-text">Share the transcript (redact anything you want)</div>
+                </li>
+                <li>
+                    <svg class="step-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 10H14C12.8954 10 12 10.8954 12 12V38C12 39.1046 12.8954 40 14 40H34C35.1046 40 36 39.1046 36 38V12C36 10.8954 35.1046 10 34 10H30" stroke="#2D4A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="18" y="8" width="12" height="6" rx="1" stroke="#2D4A3E" stroke-width="2"/>
+                        <path d="M20 26L23 29L28 22" stroke="#2D4A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="num">3.</div>
+                    <div class="step-text">Get professional notes back</div>
+                </li>
             </ol>
         </div>
 
